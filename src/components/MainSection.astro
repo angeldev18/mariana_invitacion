@@ -1,0 +1,58 @@
+---
+import tower from "../assets/rapunzel_cliparts/tower.png";
+import flowers from "../assets/rapunzel_cliparts/flower_arangement.png";
+import r_c2 from "../assets/rapunzel_cliparts/rapunzel_combo2.png";
+import sun from "../assets/rapunzel_cliparts/sun.png";
+import pascal from "../assets/rapunzel_cliparts/pascal1.png";
+import maximus from "../assets/rapunzel_cliparts/maximus.png";
+---
+
+<main class="section">
+  <p
+    class="text-3xl text-center my-5 w-3/4 mx-auto cursive font-black text-primary"
+  >
+    Acompañame a festejar mi Cumpleaños
+  </p>
+  <img src={r_c2.src} alt="Rapunzel" class="w-48 mx-auto mt-3 aspect-square" />
+  <h2 class="cursive text-7xl ml-5 -mt-5 text-primary">
+    Mariana <br />
+    <span class="ml-5">Valentina</span>
+  </h2>
+  <div class="flex mt-5">
+    <img
+      src={pascal.src}
+      alt="Pascal"
+      class="size-16 aspect-square -scale-x-[1]"
+    />
+    <div
+      class="ml-3 grid gap-x-3 text-secondary"
+      style="grid-template-columns: auto auto;"
+    >
+      <span class="cursive text-7xl">15</span>
+      <span class="cursive text-[44px] leading-none"
+        >Febrero <br /> <span class="text-3xl">2025</span></span
+      >
+      <span></span>
+    </div>
+  </div>
+  <img
+    src={sun.src}
+    alt="Imagen de sol"
+    class="absolute top-4 left-0 -z-10 h-36 opacity-75"
+  />
+  <img
+    src={maximus.src}
+    alt="Maximus"
+    class="absolute bottom-0 -left-11 -z-10 h-44 -scale-x-[1]"
+  />
+  <img
+    src={flowers.src}
+    alt="Flores"
+    class="absolute top-0 -right-20 -z-10 h-screen opacity-50"
+  />
+  <img
+    src={tower.src}
+    alt="Torre"
+    class="absolute bottom-0 -right-6 -z-10 h-80"
+  />
+</main>
