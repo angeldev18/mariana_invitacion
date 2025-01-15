@@ -47,6 +47,12 @@ import acuarela from "../assets/background.svg";
     @apply max-w-md w-full mx-auto px-4 py-3 relative overflow-x-hidden overflow-y-clip h-lvh;
   }
 
+  @media (orientation: landscape) and (max-width: 640px) {
+    .section {
+      @apply h-auto;
+    }
+  }
+
   .text-primary {
     @apply text-[#69247C];
   }
@@ -61,5 +67,14 @@ import acuarela from "../assets/background.svg";
 
   .bg-secondary {
     @apply bg-[#DA498D];
+  }
+
+  .shadow_map {
+    box-shadow:
+      rgba(240, 46, 170, 0.4) 5px 5px,
+      rgba(240, 46, 170, 0.3) 10px 10px,
+      rgba(240, 46, 170, 0.2) 15px 15px,
+      rgba(240, 46, 170, 0.1) 20px 20px,
+      rgba(240, 46, 170, 0.05) 25px 25px;
   }
 </style>

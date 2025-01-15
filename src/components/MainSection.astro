@@ -2,18 +2,24 @@
 import tower from "../assets/rapunzel_cliparts/tower.png";
 import flowers from "../assets/rapunzel_cliparts/flower_arangement.png";
 import r_c2 from "../assets/rapunzel_cliparts/rapunzel_combo2.png";
-import sun from "../assets/rapunzel_cliparts/sun.png";
 import pascal from "../assets/rapunzel_cliparts/pascal1.png";
 import maximus from "../assets/rapunzel_cliparts/maximus.png";
+import Heart from "./icons/Heart.astro";
 ---
 
 <main class="section">
   <p
-    class="text-3xl text-center my-5 w-3/4 mx-auto cursive font-black text-primary"
+    class="text-3xl text-center my-5 w-3/4 mx-auto cursive font-black text-primary text-pretty"
   >
-    Acompañame a festejar mi Cumpleaños
+    Acompáñame a festejar mi cumpleaños
   </p>
-  <img src={r_c2.src} alt="Rapunzel" class="w-48 mx-auto mt-3 aspect-square" />
+  <div class="relative">
+    <img src={r_c2.src} alt="Rapunzel" class="w-48 mx-auto mt-3 aspect-square" />
+    <div class="absolute top-0 left-0 w-24">
+      <span class="absolute top-1/2 left-1/2 [transform:translate(-50%,-50%)] cursive text-white text-4xl">4</span>
+      <Heart />
+    </div>
+  </div>
   <h2 class="cursive text-7xl ml-5 -mt-5 text-primary">
     Mariana <br />
     <span class="ml-5">Valentina</span>
@@ -35,11 +41,6 @@ import maximus from "../assets/rapunzel_cliparts/maximus.png";
       <span></span>
     </div>
   </div>
-  <img
-    src={sun.src}
-    alt="Imagen de sol"
-    class="absolute top-4 left-0 -z-10 h-36 opacity-75"
-  />
   <img
     src={maximus.src}
     alt="Maximus"

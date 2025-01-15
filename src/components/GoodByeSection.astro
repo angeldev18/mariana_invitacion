@@ -1,0 +1,29 @@
+---
+import gif from "../assets/angry.gif";
+import tower from "../assets/rapunzel_cliparts/tower.png";
+---
+
+<section class="section relative">
+  <div>
+    <p class="cursive text-4xl font-black text-center mt-14 text-primary">
+      Tu presencia es lo más importante, no faltes.
+    </p>
+    <div class="mt-12 w-11/12 mx-auto p-1 shadow_map">
+      <img src={gif.src} alt="" />
+    </div>
+  </div>
+  <button id="con"></button>
+  <img
+    src={tower.src}
+    alt="Torre"
+    class="absolute bottom-0 -right-6 -z-10 h-80"
+  />
+  <footer class="absolute bottom-0 w-full left-0 py-3 bg-white bg-opacity-70">
+    <p class="text-center text-secondary text-pretty font-semibold">
+      © 2025 Creado con ❤️ por <a
+        href="mailto:baezdev@gmail.com"
+        class="text-primary underline underline-offset-2">Ángel Baez</a
+      >
+    </p>
+  </footer>
+</section>
