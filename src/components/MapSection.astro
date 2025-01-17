@@ -1,7 +1,7 @@
 ---
 import MapIcon from "./icons/MapIcon.astro";
 
-import flower from "../assets/rapunzel_cliparts/flower.png";
+import flower from "../assets/rapunzel_cliparts/flower.webp";
 ---
 
 <section class="section">
@@ -12,13 +12,14 @@ import flower from "../assets/rapunzel_cliparts/flower.png";
     <p class="mt-4 text-center font-semibold text-secondary text-pretty">
       Juventino Rosas, Tenorios, 09680 Ciudad de México, CDMX
     </p>
-    <div class="mt-8 w-11/12 mx-auto p-1 shadow_map">
+    <div class="mt-8 w-11/12 mx-auto p-px shadow_map animate_img">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.0036521265682!2d-99.02221535743072!3d19.33278495668419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce02b027a39de9%3A0x4d2dc776074cdce1!2sJuventino%20Rosas%2C%20Tenorios%2C%2009680%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1736746324598!5m2!1ses-419!2smx"
         style="border:0; width: 100%; aspect-ratio: 1/1;"
         allowfullscreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        referrerpolicy="no-referrer-when-downgrade"
+        title="ubicacion de la fiesta"></iframe>
     </div>
     <div class="mt-12 flex justify-center">
       <a
@@ -39,5 +40,6 @@ import flower from "../assets/rapunzel_cliparts/flower.png";
     src={flower.src}
     alt="Maximus"
     class="absolute bottom-0 left-3 -z-10 h-32"
+    loading="lazy"
   />
 </section>

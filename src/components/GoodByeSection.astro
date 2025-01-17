@@ -1,6 +1,6 @@
 ---
 import gif from "../assets/angry.gif";
-import tower from "../assets/rapunzel_cliparts/tower.png";
+import tower from "../assets/rapunzel_cliparts/tower.webp";
 ---
 
 <section class="section relative">
@@ -8,15 +8,15 @@ import tower from "../assets/rapunzel_cliparts/tower.png";
     <p class="cursive text-4xl font-black text-center mt-14 text-primary">
       Tu presencia es lo más importante, no faltes.
     </p>
-    <div class="mt-12 w-11/12 mx-auto p-1 shadow_map">
-      <img src={gif.src} alt="" />
+    <div class="mt-12 w-11/12 mx-auto p-px shadow_map">
+      <img src={gif.src} alt="gif de camaleon" loading="lazy" />
     </div>
   </div>
-  <button id="con"></button>
   <img
     src={tower.src}
     alt="Torre"
     class="absolute bottom-0 -right-6 -z-10 h-80"
+    loading="lazy"
   />
   <footer class="absolute bottom-0 w-full left-0 py-3 bg-white bg-opacity-70">
     <p class="text-center text-secondary text-pretty font-semibold">

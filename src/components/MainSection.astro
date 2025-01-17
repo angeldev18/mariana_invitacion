@@ -1,10 +1,9 @@
 ---
-import tower from "../assets/rapunzel_cliparts/tower.png";
-import flowers from "../assets/rapunzel_cliparts/flower_arangement.png";
-import r_c2 from "../assets/rapunzel_cliparts/rapunzel_combo2.png";
-import pascal from "../assets/rapunzel_cliparts/pascal1.png";
-import maximus from "../assets/rapunzel_cliparts/maximus.png";
-import Heart from "./icons/Heart.astro";
+import tower from "../assets/rapunzel_cliparts/tower.webp";
+import flowers from "../assets/rapunzel_cliparts/flower_arangement.webp";
+import r_c3 from "../assets/rapunzel_cliparts/rapunzel_combo3.webp";
+import pascal from "../assets/rapunzel_cliparts/pascal1.webp";
+import maximus from "../assets/rapunzel_cliparts/maximus.webp";
 ---
 
 <main class="section">
@@ -13,14 +12,21 @@ import Heart from "./icons/Heart.astro";
   >
     Acompáñame a festejar mi cumpleaños
   </p>
-  <div class="relative">
-    <img src={r_c2.src} alt="Rapunzel" class="w-48 mx-auto mt-3 aspect-square" />
-    <div class="absolute top-0 left-0 w-24">
-      <span class="absolute top-1/2 left-1/2 [transform:translate(-50%,-50%)] cursive text-white text-4xl">4</span>
-      <Heart />
-    </div>
+  <div class="relative flex items-center justify-center">
+    <img
+      src={r_c3.src}
+      alt="Rapunzel"
+      class="w-44 mt-3 absolute left-2 animate__animated animate__fadeIn"
+      loading="lazy"
+    />
+    <h3
+      class="font-black text-[12rem] cursive block text-secondary z-10 leading-none drop-shadow-[0_4px_6px_rgba(218,73,141,0.8)]"
+      id="years"
+    >
+      0
+    </h3>
   </div>
-  <h2 class="cursive text-7xl ml-5 -mt-5 text-primary">
+  <h2 class="cursive text-7xl ml-5 text-primary animate__animated animate__fadeIn">
     Mariana <br />
     <span class="ml-5">Valentina</span>
   </h2>
@@ -28,15 +34,16 @@ import Heart from "./icons/Heart.astro";
     <img
       src={pascal.src}
       alt="Pascal"
-      class="size-16 aspect-square -scale-x-[1]"
+      class="size-16 aspect-square -scale-x-[1] animate__animated animate__fadeIn"
+      loading="lazy"
     />
     <div
       class="ml-3 grid gap-x-3 text-secondary"
       style="grid-template-columns: auto auto;"
     >
-      <span class="cursive text-7xl">15</span>
+      <span class="cursive text-7xl" id="day">0</span>
       <span class="cursive text-[44px] leading-none"
-        >Febrero <br /> <span class="text-3xl">2025</span></span
+        >Febrero <br /> <span class="text-3xl" id="year">2025</span></span
       >
       <span></span>
     </div>
@@ -44,16 +51,29 @@ import Heart from "./icons/Heart.astro";
   <img
     src={maximus.src}
     alt="Maximus"
-    class="absolute bottom-0 -left-11 -z-10 h-44 -scale-x-[1]"
+    class="absolute bottom-0 -left-11 -z-10 h-44 -scale-x-[1] animate__animated animate__fadeIn"
+    loading="lazy"
   />
   <img
     src={flowers.src}
     alt="Flores"
     class="absolute top-0 -right-20 -z-10 h-screen opacity-50"
+    loading="lazy"
   />
   <img
     src={tower.src}
     alt="Torre"
-    class="absolute bottom-0 -right-6 -z-10 h-80"
+    class="absolute bottom-0 -right-6 -z-10 h-80 animate__animated animate__fadeIn"
+    loading="lazy"
   />
 </main>
+<script>
+  import { animateNumbers } from "../helpers/animations"
+
+  const $years = document.getElementById("years");
+  const $day = document.getElementById("day");
+
+  animateNumbers(0, 4, $years);
+  animateNumbers(0, 15, $day);
+
+</script>

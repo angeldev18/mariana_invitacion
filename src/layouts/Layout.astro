@@ -2,6 +2,8 @@
 import "@fontsource/poppins";
 import "@fontsource-variable/dancing-script";
 
+import "animate.css";
+
 import acuarela from "../assets/background.svg";
 ---
 
@@ -12,7 +14,22 @@ import acuarela from "../assets/background.svg";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Mi Cumpleaños</title>
+    <meta
+      name="description"
+      content="¡Estás invitado a la fiesta de cumpleaños de Mariana Valentina! Únete a la celebración el 15 de Febrero de 2025. Haz clic para más detalles."
+    />
+    <meta property="og:title" content="Invitación de Cumpleaños de Mariana Valentina" />
+    <meta
+      property="og:description"
+      content="¡Estás invitado a la fiesta de cumpleaños de Mariana Valentina! Únete a la celebración el 15 de Febrero de 2025. Haz clic para más detalles."
+    />
+    <meta property="og:image" content="/captura.png" />
+    <meta property="og:url" content="https://mi-cumple-blush.vercel.app/" />
+    <meta property="og:type" content="website" />
+
+    <title>
+      Invitación de Cumpleaños de Mariana Valentina - 15/Febrero/2025
+    </title>
   </head>
   <body>
     <div
@@ -21,6 +38,7 @@ import acuarela from "../assets/background.svg";
     >
       <slot />
     </div>
+    <audio id="audio" src="/sounds/rapunzel.mp3"></audio>
   </body>
 </html>
 
@@ -32,7 +50,11 @@ import acuarela from "../assets/background.svg";
     height: 100%;
     font-family: "Poppins", sans-serif;
     color: #1a1a1a;
-    font-display: block;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-display: swap;
   }
 
   .cursive {
@@ -62,19 +84,27 @@ import acuarela from "../assets/background.svg";
   }
 
   .bg-primary {
-    @apply bg-[#69247C];
+    @apply bg-[#69247c];
   }
 
   .bg-secondary {
-    @apply bg-[#DA498D];
+    @apply bg-[#da498d];
   }
 
   .shadow_map {
     box-shadow:
-      rgba(240, 46, 170, 0.4) 5px 5px,
-      rgba(240, 46, 170, 0.3) 10px 10px,
-      rgba(240, 46, 170, 0.2) 15px 15px,
-      rgba(240, 46, 170, 0.1) 20px 20px,
-      rgba(240, 46, 170, 0.05) 25px 25px;
+      rgba(218, 73, 141, 0.4) 0px 0px 0px 2px,
+      rgba(218, 73, 141, 0.65) 0px 4px 6px -1px,
+      rgba(105, 36, 124, 0.08) 0px 1px 0px inset;
   }
 </style>
+<script>
+  const $audio = document.getElementById("audio") as HTMLAudioElement;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if ($audio) {
+      $audio.play();
+      $audio.volume = 0.2;
+    }
+  });
+</script>
