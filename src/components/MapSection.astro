@@ -2,24 +2,30 @@
 import MapIcon from "./icons/MapIcon.astro";
 
 import flower from "../assets/rapunzel_cliparts/flower.webp";
+import map from "../assets/images/mapa.png";
 ---
 
 <section class="section">
   <div>
     <p class="cursive text-4xl font-black text-center mt-14 text-primary">
-      Te esperamos en...
+      Te esperamos
     </p>
-    <p class="mt-4 text-center font-semibold text-secondary text-pretty">
-      Juventino Rosas, Tenorios, 09680 Ciudad de México, CDMX
+    <p
+      class="cursive text-6xl font-black text-center mt-6 text-primary text-secondary"
+    >
+      <span id="hour">0</span>:00 PM
     </p>
-    <div class="mt-8 w-11/12 mx-auto p-px shadow_map animate_img">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.0036521265682!2d-99.02221535743072!3d19.33278495668419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce02b027a39de9%3A0x4d2dc776074cdce1!2sJuventino%20Rosas%2C%20Tenorios%2C%2009680%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1736746324598!5m2!1ses-419!2smx"
-        style="border:0; width: 100%; aspect-ratio: 1/1;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="ubicacion de la fiesta"></iframe>
+    <p class="mt-6 text-center font-semibold text-primary text-pretty">
+      En Juventino Rosas, Tenorios, 09680 Ciudad de México, CDMX
+    </p>
+    <div class="mt-8 animate_img w-auto">
+      <a
+        class="block hover:scale-105 shadow_map w-3/4 mx-auto transition-transform"
+        href="https://maps.app.goo.gl/e97RKfvUQvx9bPsP7"
+        target="_blank"
+      >
+        <img class="w-auto" src={map.src} alt="ubicacion del evento" loading="lazy" />
+      </a>
     </div>
     <div class="mt-12 flex justify-center">
       <a
@@ -43,3 +49,9 @@ import flower from "../assets/rapunzel_cliparts/flower.webp";
     loading="lazy"
   />
 </section>
+<script>
+  import { animateNumbers } from "../helpers/animations"
+
+  const $hour = document.getElementById("hour");
+  animateNumbers(0, 4, $hour);
+</script>

@@ -4,9 +4,11 @@ import flowers from "../assets/rapunzel_cliparts/flower_arangement.webp";
 import r_c3 from "../assets/rapunzel_cliparts/rapunzel_combo3.webp";
 import pascal from "../assets/rapunzel_cliparts/pascal1.webp";
 import maximus from "../assets/rapunzel_cliparts/maximus.webp";
+import Play from "./icons/Play.astro";
+import Pause from "./icons/Pause.astro";
 ---
 
-<main class="section">
+<main class="section relative">
   <p
     class="text-3xl text-center my-5 w-3/4 mx-auto cursive font-black text-primary text-pretty"
   >
@@ -26,7 +28,9 @@ import maximus from "../assets/rapunzel_cliparts/maximus.webp";
       0
     </h3>
   </div>
-  <h2 class="cursive text-7xl ml-5 text-primary animate__animated animate__fadeIn">
+  <h2
+    class="cursive text-7xl ml-5 text-primary animate__animated animate__fadeIn"
+  >
     Mariana <br />
     <span class="ml-5">Valentina</span>
   </h2>
@@ -48,12 +52,24 @@ import maximus from "../assets/rapunzel_cliparts/maximus.webp";
       <span></span>
     </div>
   </div>
+  <button
+    id="player_button"
+    class="fixed z-30 top-20 left-2 bg-secondary p-2 rounded-full text-white drop-shadow-[0_4px_4px_rgba(218,73,141,0.8)] animate-pulse"
+  >
+    <i id="player_play">
+      <Play />
+    </i>
+    <i id="player_pause" class="hidden">
+      <Pause />
+    </i>
+  </button>
   <img
     src={maximus.src}
     alt="Maximus"
     class="absolute bottom-0 -left-11 -z-10 h-44 -scale-x-[1] animate__animated animate__fadeIn"
     loading="lazy"
   />
+  <audio id="audio" src="/sounds/rapunzel.mp3"></audio>
   <img
     src={flowers.src}
     alt="Flores"
@@ -68,7 +84,7 @@ import maximus from "../assets/rapunzel_cliparts/maximus.webp";
   />
 </main>
 <script>
-  import { animateNumbers } from "../helpers/animations"
+  import { animateNumbers } from "../helpers/animations";
 
   const $years = document.getElementById("years");
   const $day = document.getElementById("day");
@@ -76,4 +92,30 @@ import maximus from "../assets/rapunzel_cliparts/maximus.webp";
   animateNumbers(0, 4, $years);
   animateNumbers(0, 15, $day);
 
+  const $player_button = document.getElementById("player_button");
+  const $player_play = document.getElementById("player_play");
+  const $player_pause = document.getElementById("player_pause");
+
+  if ($player_button) {
+    const $audio = document.getElementById("audio") as HTMLAudioElement;
+
+    $player_button.addEventListener("click", () => {
+
+      if ($audio.paused) {
+        $audio.play();
+        $audio.volume = 1
+        $player_play?.classList.add("hidden");
+        $player_pause?.classList.remove("hidden");
+      } else {
+        $audio.pause();
+        $player_play?.classList.remove("hidden");
+        $player_pause?.classList.add("hidden");
+      }
+    });
+
+    $audio.addEventListener("ended", () => {
+      $player_play?.classList.remove("hidden");
+      $player_pause?.classList.add("hidden");
+    });
+  }
 </script>

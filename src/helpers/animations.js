@@ -1,12 +1,12 @@
 import { animate } from "motion";
 
-export function animateNumbers(from = 0, to = 10, element) {
+export function animateNumbers(from = 0, to = 10, element, duration = 1.5) {
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           animate(from, to, {
-            duration: 2,
+            duration,
             ease: "circOut",
             onUpdate: (latest) => {
               if (element) {

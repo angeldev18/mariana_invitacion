@@ -11,8 +11,10 @@ import pascal from "../assets/rapunzel_cliparts/pascal2.webp";
       Faltan...
     </p>
     <div class="flex flex-col items-center my-5">
-      <p id="days" class="text-8xl cursive text-secondary"></p>
+      <p id="days" class="text-8xl cursive text-secondary">0</p>
       <p class="cursive text-3xl text-primary font-extrabold">Días</p>
+      <p id="hours" class="text-8xl cursive text-secondary">0</p>
+      <p class="cursive text-3xl text-primary font-extrabold">Horas</p>
     </div>
     <div class="flex justify-center">
       <a
@@ -45,23 +47,27 @@ import pascal from "../assets/rapunzel_cliparts/pascal2.webp";
     class="absolute bottom-0 -left-24 -z-10 h-[calc(100lvh-150px)] opacity-50 -scale-[1]"
     loading="lazy"
   />
-  <img
-    src={max.src}
-    alt="Maximus"
-    class="absolute bottom-0 right-0 -z-10 h-52 animate__animated animate__fadeIn"
-    loading="lazy"
-  />
 </section>
 <script>
-  import { diffDays } from "@formkit/tempo";
+  import { diffDays, diffHours } from "@formkit/tempo";
   import { animateNumbers } from "../helpers/animations"
 
-  const diffsDays = diffDays(new Date("2025-02-15"), new Date());
-  const daysElement = document.getElementById("days");
+  
+  const diffsDays = diffDays(new Date("2025-02-15 16:00"), new Date());
+  const diffHour = diffHours(new Date("2025-02-15 16:00"), new Date());
+  const hourRemaining = diffHour % diffsDays;
+  const $days = document.getElementById("days");
+  const $hours = document.getElementById("hours");
 
-  if (daysElement) {
-    daysElement.textContent = `${diffsDays + 1}`;
+  if ($days) {
+    $days.textContent = `${diffsDays + 1}`;
   }
 
-  animateNumbers(0, diffsDays, daysElement);
+  if ($hours) {
+    $hours.textContent = `${hourRemaining}`;
+  }
+
+  animateNumbers(0, diffsDays, $days);
+  animateNumbers(0, hourRemaining, $hours);
+
 </script>

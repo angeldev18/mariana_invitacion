@@ -38,7 +38,6 @@ import acuarela from "../assets/background.svg";
     >
       <slot />
     </div>
-    <audio id="audio" src="/sounds/rapunzel.mp3"></audio>
   </body>
 </html>
 
@@ -98,13 +97,3 @@ import acuarela from "../assets/background.svg";
       rgba(105, 36, 124, 0.08) 0px 1px 0px inset;
   }
 </style>
-<script>
-  const $audio = document.getElementById("audio") as HTMLAudioElement;
-
-  document.addEventListener("DOMContentLoaded", () => {
-    if ($audio) {
-      $audio.play();
-      $audio.volume = 0.2;
-    }
-  });
-</script>
