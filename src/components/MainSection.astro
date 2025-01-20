@@ -117,5 +117,13 @@ import Pause from "./icons/Pause.astro";
       $player_play?.classList.remove("hidden");
       $player_pause?.classList.add("hidden");
     });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") {
+        $audio.pause();
+        $player_play?.classList.remove("hidden");
+        $player_pause?.classList.add("hidden");
+      }
+    }) 
   }
 </script>
